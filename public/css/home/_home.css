@@ -1,0 +1,15 @@
+.home-page{
+    .swiper-container {
+        width: 100%;
+        height: 9rem;
+        img {
+            width: 100%;
+            height: 9rem;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #4A5863;
+        }
+    }
+}
+
