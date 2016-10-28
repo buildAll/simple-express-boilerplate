@@ -1,7 +1,7 @@
 const homeModel = require('../../models/home/home');
 
 const index = (req, res) => {
-    res.render('home', homeModel.get());
+    res.render('home', homeModel.getData());
 }
 
 module.exports = {

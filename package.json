@@ -5,7 +5,8 @@
   "scripts": {
     "express": "node ./bin/www",
     "start": " node ./bin/www | webpack-dev-server --config ./public/webpack.config.js",
-    "build": "webpack --config ./public/webpack.config.js"
+    "build": "webpack --config ./public/webpack.config.js",
+    "dev": "nodemon -e js,hbs -i public/ ./bin/www"
   },
   "dependencies": {
     "async": "^2.0.0-rc.2",
@@ -46,6 +47,7 @@
     "html-webpack-plugin": "^2.15.0",
     "imagemin-pngquant": "^4.2.2",
     "node-sass": "^3.4.2",
+    "nodemon": "^1.11.0",
     "postcss-import": "^8.0.2",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.0",

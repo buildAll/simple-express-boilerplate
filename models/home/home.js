@@ -1,4 +1,4 @@
-const get = () => {
+const getData = () => {
     return {
         homePage: true,
         title: 'home',
@@ -7,5 +7,5 @@ const get = () => {
 }
 
 module.exports = {
-    get: get
+    getData
 };
