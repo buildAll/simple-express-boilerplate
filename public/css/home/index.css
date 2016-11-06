@@ -1,1 +1,5 @@
-@import './_home.css'
+.home-page {
+    @import './_home.css';
+    @import './_banner.css';
+    @import './_product-slider.css';
+}

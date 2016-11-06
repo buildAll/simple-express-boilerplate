@@ -62,7 +62,7 @@ const common = {
 // config for the development phase
 if (TARGET === 'start' || !TARGET) {
     module.exports = merge(common, {
-        devtool: 'eval-source-map',
+        devtool: 'eval',
         devServer: {
             historyApiFailback: true,
             hot: true,
