@@ -6,7 +6,7 @@ const $ = require('jquery');
 const showMenu = () => {
     $('.mask').show();
     $('.menu').show().animate({
-        width: '350px',
+        width: '270px',
     }, 500);
 }
 

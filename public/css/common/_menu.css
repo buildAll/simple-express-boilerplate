@@ -1,10 +1,33 @@
 .menu {
+    padding: 80px 0;
     width: 0px;
     height: 100vh;
-    background-color: #c1c1c1;
+    background-color: #292929;
     position: fixed;;
     top: 0;
     left: 0;
     display: none;
+    text-align: center;
     z-index: 99;
+
+    h2 {
+        font-size: 15px;
+        color: #b89f7a;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 20px 10px;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        li:hover {
+            color: #b89f7a;
+            cursor: pointer;
+        }
+    }
 }
