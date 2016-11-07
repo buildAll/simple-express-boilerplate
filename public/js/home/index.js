@@ -21,13 +21,14 @@ const hideMenu = () => {
 $('.menu-icon').on('click', showMenu);
 $('.mask').on('click', hideMenu);
 
-// var Swiper = require('plugin/swiper');
-//
-//
-// var mySwiper = new Swiper ('.swiper-container', {
-//     slideToClickedSlide: true,
-//     autoplay: 2000,
-//     loop: false,
-//     pagination: '.swiper-pagination',
-//     paginationClickable: true
-// });
+const Swiper = require('plugin/swiper');
+
+const mySwiper = new Swiper ('.slider.product .swiper-container', {
+    slideToClickedSlide: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    grabCursor: true,
+    paginationClickable: true
+});
