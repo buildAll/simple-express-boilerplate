@@ -6,7 +6,7 @@ const $ = require('jquery');
 const showMenu = () => {
     $('.mask').show();
     $('.menu').show().animate({
-        width: '200px',
+        width: '350px',
     }, 500);
 }
 
@@ -23,12 +23,13 @@ $('.mask').on('click', hideMenu);
 
 const Swiper = require('plugin/swiper');
 
-const mySwiper = new Swiper ('.slider.product .swiper-container', {
+const mySwiper = new Swiper ('.swiper-container', {
     slideToClickedSlide: true,
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
     slidesPerView: 'auto',
     spaceBetween: 30,
     grabCursor: true,
+    loop: true,
     paginationClickable: true
 });

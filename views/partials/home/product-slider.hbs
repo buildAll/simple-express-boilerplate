@@ -1,38 +1,21 @@
-<div class="slider product">
-    <div class="swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-                <img src="./images/slide1.JPG" alt="">
+<div class="product">
+    <p class="title">月牙弯经典</p>
+    <p class="sub-title">妈妈的味道</p>
+    <hr>
+    <p class="core-value">月牙弯，从来只做纯手工打造。</p>
+    <div class="slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {{#content}}
+                    {{#each productThumb}}
+                    <div class="swiper-slide">
+                        <img src="{{src}}" alt="">
+                    </div>
+                    {{/each}}
+                {{/content}}
             </div>
-            <div class="swiper-slide">
-                <img src="./images/slide2.JPG" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="./images/slide1.JPG" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="./images/slide1.JPG" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="./images/slide2.JPG" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="./images/slide1.JPG" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="./images/slide1.JPG" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="./images/slide2.JPG" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="./images/slide1.JPG" alt="">
-            </div>
+            <div class="swiper-button-prev swiper-button-white swiper-btn"></div>
+            <div class="swiper-button-next swiper-button-white swiper-btn"></div>
         </div>
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev swiper-button-white swiper-btn"></div>
-        <div class="swiper-button-next swiper-button-white swiper-btn"></div>
     </div>
 </div>

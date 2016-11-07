@@ -1,0 +1,21 @@
+.culture {
+    background-image: none;
+    height: 900px;
+    max-width: 1760px;
+    margin: 0 auto;
+
+    .sub-content{
+        float: left;
+        width: 50%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100% 100%;
+    }
+    .left {
+        background-image: url('http://localhost:8080/images/left.png');
+    }
+    .right {
+        background-image: url('http://localhost:8080/images/right.jpg');
+    }
+}
