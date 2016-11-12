@@ -76,6 +76,17 @@ if (TARGET === 'start' || !TARGET) {
         module: {
             loaders: [
                 {
+                    test: /\.js$/,
+                    loader: 'babel',
+                    query: {
+                        presets: ['es2015']
+                    }
+                },
+                {
+                    test: /\.hbs$/,
+                    loader: 'handlebars-loader'
+                },
+                {
                     test: /\.css$/,
                     loaders: ['style', 'css', 'postcss']
                 },
@@ -106,11 +117,24 @@ if (TARGET === 'build') {
         },
         output: {
             path: PATHS.build,
-            filename: '[name].[chunkhash].js',
-            chunkFilename: '[chunkhash].js'
+            filename: '[name].js',
+            //chunkFilename: '[name].js'
+            chunkFilename: "[name].js"
         },
         module: {
             loaders: [
+                {
+                    test: /\.js$/,
+                    loader: 'babel',
+                    query: {
+                        presets: ['es2015'],
+                        compact: false
+                    }
+                },
+                {
+                    test: /\.hbs$/,
+                    loader: 'handlebars-loader'
+                },
                 {
                     test: /\.css$/,
                     loader: ExtractTextPlugin.extract('style', 'css!postcss'),
@@ -130,7 +154,7 @@ if (TARGET === 'build') {
             new webpack.optimize.CommonsChunkPlugin({
                 names: ['vendor', 'manifest']
             }),
-            new ExtractTextPlugin('[name].[chunkhash].css'),
+            new ExtractTextPlugin('[name].css'),
             new CleanWebpackPlugin([PATHS.build])
         ],
         postcss: function(webpack) {

@@ -22,6 +22,8 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
+app.locals.devEnv = app.get('env') === 'development';
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));

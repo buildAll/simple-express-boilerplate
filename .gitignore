@@ -1,5 +1,8 @@
+public/dist/*
+./public/dist/*
+./public/dist
+public/dist
 node_modules/
 *.swp
 *.*.swp
-public/dist/
 

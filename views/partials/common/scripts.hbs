@@ -1,4 +1,12 @@
-{{#if homePage}}
-<script src="http://localhost:8080/home.js"></script>
+{{#if devEnv}}
+    {{#if homePage}}
+        <script src="http://localhost:8080/home.js"></script>
+    {{/if}}
+{{^}}
+<script src="http://localhost:8080/dist/mainfest.js"></script>
+<script src="http://localhost:8080/dist/vendor.js"></script>
+    {{#if homePage}}
+        <script src="http://localhost:8080/dist/home.js"></script>
+    {{/if}}
 {{/if}}
 

@@ -6,7 +6,8 @@
     "express": "node ./bin/www",
     "start": " node ./bin/www | webpack-dev-server --config ./public/webpack.config.js",
     "build": "webpack --config ./public/webpack.config.js",
-    "dev": "nodemon -e js,hbs -i public/ ./bin/www"
+    "dev": "nodemon -e js,hbs -i public/ ./bin/www",
+    "publish":"NODE_ENV=\"production\" node ./bin/www"
   },
   "dependencies": {
     "async": "^2.0.0-rc.2",

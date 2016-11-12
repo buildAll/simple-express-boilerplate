@@ -22,6 +22,9 @@
         })(document, window);
     </script>
     <link rel="stylesheet" href="http://localhost:8080/css/normalize.css">
+    {{#unless devEnv}}
+        {{> common/styles}}
+    {{/unless}}
 </head>
 <body>
     {{{body}}}
