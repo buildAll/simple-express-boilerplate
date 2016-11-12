@@ -9,7 +9,7 @@
         height: 100%;
         width: 20%;
         width: 100px;
-        background-image: url('http://localhost:8080/images/menu_icon.svg');
+        background-image: url('/images/menu_icon.svg');
         background-repeat: no-repeat;
         background-size: 30px 20px;
         background-position: center;
@@ -19,7 +19,7 @@
         float: left;
         width: 80%;
         height: 100%;
-        background-image: url('http://localhost:8080/images/logo-small.png');
+        background-image: url('/images/logo-small.png');
         background-repeat: no-repeat;
         background-size: 136px 50px;
         background-position: center;

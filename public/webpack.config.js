@@ -76,17 +76,6 @@ if (TARGET === 'start' || !TARGET) {
         module: {
             loaders: [
                 {
-                    test: /\.js$/,
-                    loader: 'babel',
-                    query: {
-                        presets: ['es2015']
-                    }
-                },
-                {
-                    test: /\.hbs$/,
-                    loader: 'handlebars-loader'
-                },
-                {
                     test: /\.css$/,
                     loaders: ['style', 'css', 'postcss']
                 },
