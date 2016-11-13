@@ -12,6 +12,8 @@ const app = express();
 // view engine setup
 const exphbs = require('express-handlebars');
 
+const env = app.get('env');
+
 app.set('views', path.join(__dirname, 'views/layouts'));
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
@@ -22,6 +24,9 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
+// get env for template rendering
+app.locals.devEnv = env === 'development';
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
@@ -30,7 +35,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+try {
+    app.use('/', routes);
+} catch(e) {
+    console.log(e);
+};
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -43,7 +52,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (env === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {

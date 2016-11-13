@@ -1,1 +1,12 @@
-@import './_home.css'
+.home-page {
+    $brandColor: #397842;
+
+    /*
+    background-color: #b7c470;
+    */
+
+    @import './_home.css';
+    @import './_banner.css';
+    @import './_product-slider.css';
+    @import './_culture-banner.css';
+}

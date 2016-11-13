@@ -21,7 +21,11 @@
             }());
         })(document, window);
     </script>
-    <link rel="stylesheet" href="http://localhost:8080/css/normalize.css">
+    {{#if devEnv}}
+        <link rel="stylesheet" href="http://localhost:8080/css/normalize.css">
+    {{^}}
+        {{> common/styles}}
+    {{/if}}
 </head>
 <body>
     {{{body}}}

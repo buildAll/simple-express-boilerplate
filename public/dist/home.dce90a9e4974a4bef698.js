@@ -1,1 +1,0 @@
-webpackJsonp([0,3],{0:function(n,i,o){o(1),o(5);var a=(o(13),o(14));new a(".swiper-container",{slideToClickedSlide:!0,autoplay:2e3,loop:!1,pagination:".swiper-pagination",paginationClickable:!0})},1:function(n,i){},5:function(n,i){},14:function(n,i,o){var a=o(15);o(16),n.exports=a},16:function(n,i){}});

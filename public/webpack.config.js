@@ -19,6 +19,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 const postcssImport = require('postcss-import');
+const postcssAssests = require('postcss-assets');
 
 // project path config
 const PATHS = {
@@ -62,7 +63,7 @@ const common = {
 // config for the development phase
 if (TARGET === 'start' || !TARGET) {
     module.exports = merge(common, {
-        devtool: 'eval-source-map',
+        devtool: 'eval',
         devServer: {
             historyApiFailback: true,
             hot: true,
@@ -92,7 +93,12 @@ if (TARGET === 'start' || !TARGET) {
             return [
                 postcssImport({addDependencyTo: webpack}),
                 precss,
-                autoprefixer
+                autoprefixer,
+                postcssAssests({
+                    baseUrl: 'http://0.0.0.0:8080/', // change 0.0.0.0 to your awesome web host
+                    basePath: path.join(__dirname, '/'),
+                    loadPaths: ['images/']
+                })
             ];
         }
     });
@@ -106,17 +112,30 @@ if (TARGET === 'build') {
         },
         output: {
             path: PATHS.build,
-            filename: '[name].[chunkhash].js',
-            chunkFilename: '[chunkhash].js'
+            filename: '[name].js',
+            //chunkFilename: '[name].js'
+            chunkFilename: "[name].js"
         },
         module: {
             loaders: [
+                {
+                    test: /\.js$/,
+                    loader: 'babel',
+                    query: {
+                        presets: ['es2015'],
+                        compact: false
+                    }
+                },
+                {
+                    test: /\.hbs$/,
+                    loader: 'handlebars-loader'
+                },
                 {
                     test: /\.css$/,
                     loader: ExtractTextPlugin.extract('style', 'css!postcss'),
                 },
                 {
-                    test: /\.jpg|png|jpeg/,
+                    test: /\.jpg|png|jpeg|svg/,
                     loader: 'url?limit=25000'
                 }
             ]
@@ -130,14 +149,19 @@ if (TARGET === 'build') {
             new webpack.optimize.CommonsChunkPlugin({
                 names: ['vendor', 'manifest']
             }),
-            new ExtractTextPlugin('[name].[chunkhash].css'),
+            new ExtractTextPlugin('[name].css'),
             new CleanWebpackPlugin([PATHS.build])
         ],
         postcss: function(webpack) {
             return [
                 postcssImport({addDependencyTo: webpack}),
                 precss,
-                autoprefixer
+                autoprefixer,
+                postcssAssests({
+                    baseUrl: 'http://0.0.0.0:8080/', // change 0.0.0.0 to your awesome web host
+                    basePath: path.join(__dirname, '/'),
+                    loadPaths: ['images/']
+                })
             ];
         }
     });
