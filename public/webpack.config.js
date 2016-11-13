@@ -19,6 +19,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 const postcssImport = require('postcss-import');
+const postcssAssests = require('postcss-assets');
 
 // project path config
 const PATHS = {
@@ -129,7 +130,7 @@ if (TARGET === 'build') {
                     loader: ExtractTextPlugin.extract('style', 'css!postcss'),
                 },
                 {
-                    test: /\.jpg|png|jpeg/,
+                    test: /\.jpg|png|jpeg|svg/,
                     loader: 'url?limit=25000'
                 }
             ]
@@ -150,7 +151,12 @@ if (TARGET === 'build') {
             return [
                 postcssImport({addDependencyTo: webpack}),
                 precss,
-                autoprefixer
+                autoprefixer,
+                postcssAssests({
+                    baseUrl: 'http://honghucanyin.com.cn:8080/',
+                    basePath: path.join(__dirname, '/'),
+                    loadPaths: ['images/']
+                })
             ];
         }
     });

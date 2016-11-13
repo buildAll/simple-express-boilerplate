@@ -13,9 +13,9 @@
         background-size: 100% 100%;
     }
     .left {
-        background-image: url('/images/left.png');
+        background-image: resolve('left.png');
     }
     .right {
-        background-image: url('/images/right.jpg');
+        background-image: resolve('right.jpg');
     }
 }

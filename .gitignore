@@ -5,4 +5,5 @@ public/dist
 node_modules/
 *.swp
 *.*.swp
+public/npm-debug.log
 
