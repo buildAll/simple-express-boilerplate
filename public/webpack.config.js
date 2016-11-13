@@ -93,7 +93,12 @@ if (TARGET === 'start' || !TARGET) {
             return [
                 postcssImport({addDependencyTo: webpack}),
                 precss,
-                autoprefixer
+                autoprefixer,
+                postcssAssests({
+                    baseUrl: 'http://0.0.0.0:8080/', // change 0.0.0.0 to your awesome web host
+                    basePath: path.join(__dirname, '/'),
+                    loadPaths: ['images/']
+                })
             ];
         }
     });
@@ -153,7 +158,7 @@ if (TARGET === 'build') {
                 precss,
                 autoprefixer,
                 postcssAssests({
-                    baseUrl: 'http://honghucanyin.com.cn:8080/',
+                    baseUrl: 'http://0.0.0.0:8080/', // change 0.0.0.0 to your awesome web host
                     basePath: path.join(__dirname, '/'),
                     loadPaths: ['images/']
                 })

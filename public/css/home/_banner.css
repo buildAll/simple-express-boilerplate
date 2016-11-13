@@ -1,7 +1,7 @@
 .banner {
     height: 95vh;
     background-color: #CCC;
-    background-image: resolve('banner.jpg');
+    background-image: resolve('justimg.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
